@@ -13,59 +13,65 @@ import {
   Table,
   Filter,
   PieChart,
-  TrendingUp,
   Briefcase,
   GitBranch,
   Github,
-  Terminal,
-  Laptop
+  Laptop,
+  Globe,
+  Cpu,
+  Layout
 } from 'lucide-react';
 
 export const Skills = () => {
-  const [activeTab, setActiveTab] = useState('analytics');
-  const { analytics, languages, database, tools, coreSkills } = portfolioData.skills;
+  const [activeTab, setActiveTab] = useState('all');
+  const { webDev, analytics, databases, aiTools, languages } = portfolioData.skills;
 
   const categories = [
-    { id: 'analytics', name: 'Data Analysis & Viz', icon: <BarChart3 className="w-4 h-4" /> },
-    { id: 'languages', name: 'Languages & SQL', icon: <Code2 className="w-4 h-4" /> },
-    { id: 'database', name: 'Database Management', icon: <Server className="w-4 h-4" /> },
-    { id: 'tools', name: 'Developer & Analytics Tools', icon: <Wrench className="w-4 h-4" /> },
     { id: 'all', name: 'All Technical Skills', icon: <Sparkles className="w-4 h-4" /> },
+    { id: 'webDev', name: 'Web Dev & Full Stack', icon: <Layout className="w-4 h-4" /> },
+    { id: 'analytics', name: 'Data Analysis & BI', icon: <BarChart3 className="w-4 h-4" /> },
+    { id: 'databases', name: 'Databases (SQL & NoSQL)', icon: <Server className="w-4 h-4" /> },
+    { id: 'aiTools', name: 'AI Tools & Platforms', icon: <Cpu className="w-4 h-4" /> },
+    { id: 'languages', name: 'Languages', icon: <Code2 className="w-4 h-4" /> },
   ];
 
   const iconComponentMap = {
+    Code2: <Code2 className="w-5 h-5 text-cyan-400" />,
+    Server: <Server className="w-5 h-5 text-blue-400" />,
+    Briefcase: <Briefcase className="w-5 h-5 text-indigo-400" />,
+    Layout: <Layout className="w-5 h-5 text-cyan-400" />,
     BarChart3: <BarChart3 className="w-5 h-5 text-cyan-400" />,
     Table: <Table className="w-5 h-5 text-emerald-400" />,
     Filter: <Filter className="w-5 h-5 text-yellow-400" />,
     PieChart: <PieChart className="w-5 h-5 text-purple-400" />,
-    Briefcase: <Briefcase className="w-5 h-5 text-blue-400" />,
-    TrendingUp: <TrendingUp className="w-5 h-5 text-indigo-400" />,
-    Code2: <Code2 className="w-5 h-5 text-cyan-400" />,
     Database: <Database className="w-5 h-5 text-blue-400" />,
-    FileCode2: <FileCode2 className="w-5 h-5 text-purple-400" />,
-    Server: <Server className="w-5 h-5 text-cyan-400" />,
-    GitBranch: <GitBranch className="w-5 h-5 text-orange-400" />,
+    Cpu: <Cpu className="w-5 h-5 text-purple-400" />,
+    Sparkles: <Sparkles className="w-5 h-5 text-amber-400" />,
     Github: <Github className="w-5 h-5 text-slate-300" />,
-    Terminal: <Terminal className="w-5 h-5 text-green-400" />,
-    Laptop: <Laptop className="w-5 h-5 text-blue-400" />
+    Laptop: <Laptop className="w-5 h-5 text-blue-400" />,
+    Globe: <Globe className="w-5 h-5 text-cyan-400" />,
+    FileCode2: <FileCode2 className="w-5 h-5 text-purple-400" />
   };
 
   const getFilteredSkills = () => {
     switch (activeTab) {
+      case 'webDev':
+        return [{ title: 'Web Development & Full Stack', items: webDev || [] }];
       case 'analytics':
-        return [{ title: 'Data Analysis & Visualization', items: analytics || [] }];
+        return [{ title: 'Data Analysis & Business Intelligence', items: analytics || [] }];
+      case 'databases':
+        return [{ title: 'Databases & Storage Architecture', items: databases || [] }];
+      case 'aiTools':
+        return [{ title: 'AI Tools, Platforms & Version Control', items: aiTools || [] }];
       case 'languages':
         return [{ title: 'Programming & Query Languages', items: languages || [] }];
-      case 'database':
-        return [{ title: 'Database Systems & SQL', items: database || [] }];
-      case 'tools':
-        return [{ title: 'Analytics & Software Tools', items: tools || [] }];
       default:
         return [
-          { title: 'Data Analysis & Visualization', items: analytics || [] },
-          { title: 'Languages & SQL', items: languages || [] },
-          { title: 'Database Systems', items: database || [] },
-          { title: 'Tools & Workspace', items: tools || [] }
+          { title: 'Web Dev & Full Stack', items: webDev || [] },
+          { title: 'Data Analysis & BI', items: analytics || [] },
+          { title: 'Databases & Storage', items: databases || [] },
+          { title: 'AI Tools & Platforms', items: aiTools || [] },
+          { title: 'Languages', items: languages || [] }
         ];
     }
   };
@@ -77,11 +83,11 @@ export const Skills = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-3">
-            <BarChart3 className="w-3.5 h-3.5" />
-            TECHNICAL & ANALYTICS SKILLS
+            <Wrench className="w-3.5 h-3.5" />
+            TECHNICAL & ANALYTICS PROFICIENCIES
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Skills & <span className="gradient-text">Proficiencies</span>
+            Full Stack & Data <span className="gradient-text">Skills</span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto mt-4 rounded-full" />
         </div>
@@ -117,7 +123,7 @@ export const Skills = () => {
               <div>
                 <h3 className="text-lg font-bold text-white mb-5 pb-3 border-b border-slate-800 flex items-center justify-between">
                   <span>{group.title}</span>
-                  <span className="text-xs font-mono text-cyan-400 font-normal">{group.items.length} Skills</span>
+                  <span className="text-xs font-mono text-cyan-400 font-normal">{group.items.length} Techs</span>
                 </h3>
 
                 <div className="space-y-4">
@@ -151,21 +157,6 @@ export const Skills = () => {
               </div>
             </motion.div>
           ))}
-        </div>
-
-        {/* Core Resume Skills Tags */}
-        <div className="mt-12 p-6 rounded-2xl glass-card border border-slate-800 text-center">
-          <h4 className="text-xs font-mono text-slate-400 uppercase tracking-wider mb-4">
-            Core Resume Skills & Competencies:
-          </h4>
-          <div className="flex flex-wrap justify-center gap-2">
-            {coreSkills.map((cSkill, idx) => (
-              <span key={idx} className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-cyan-300 text-xs font-medium flex items-center gap-1.5">
-                <CheckCircle className="w-3.5 h-3.5 text-cyan-400" />
-                {cSkill}
-              </span>
-            ))}
-          </div>
         </div>
 
       </div>
