@@ -15,8 +15,8 @@ import {
 } from 'lucide-react';
 
 export const About = () => {
-  const { aboutSummary, highlights, profileImage, name, spokenLanguages, hobbies } = portfolioData.personalInfo;
-  const { coursework } = portfolioData;
+  const { aboutSummary, highlights, profileImage, name, spokenLanguages, hobbies } = portfolioData.personalInfo || {};
+  const { coursework } = portfolioData || {};
 
   const iconMap = [
     <BarChart3 className="w-6 h-6 text-cyan-400" />,
@@ -56,7 +56,7 @@ export const About = () => {
               <div className="w-full h-full rounded-xl overflow-hidden bg-slate-900">
                 <img
                   src={profileImage}
-                  alt={name}
+                  alt={name || "Kiran K R"}
                   className="w-full h-full object-cover object-top filter contrast-[1.05] brightness-[1.02] hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -84,64 +84,72 @@ export const About = () => {
             </p>
 
             {/* Relevant Coursework Badges */}
-            <div className="mb-6 pt-4 border-t border-slate-800">
-              <h4 className="text-xs font-mono text-cyan-400 uppercase mb-3 flex items-center gap-1.5">
-                <BookOpen className="w-4 h-4 text-cyan-400" /> Relevant Coursework
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {coursework.map((course, cIdx) => (
-                  <span key={cIdx} className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 text-xs font-mono flex items-center gap-1.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
-                    {course}
-                  </span>
-                ))}
+            {coursework && coursework.length > 0 && (
+              <div className="mb-6 pt-4 border-t border-slate-800">
+                <h4 className="text-xs font-mono text-cyan-400 uppercase mb-3 flex items-center gap-1.5">
+                  <BookOpen className="w-4 h-4 text-cyan-400" /> Relevant Coursework
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {coursework.map((course, cIdx) => (
+                    <span key={cIdx} className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 text-xs font-mono flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
+                      {course}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Languages & Hobbies */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-800">
-              <div>
-                <h4 className="text-xs font-mono text-slate-400 uppercase mb-2 flex items-center gap-1.5">
-                  <Globe className="w-3.5 h-3.5 text-cyan-400" /> Languages Known
-                </h4>
-                <div className="text-xs font-medium text-slate-200">
-                  {spokenLanguages.join(', ')}
+              {spokenLanguages && (
+                <div>
+                  <h4 className="text-xs font-mono text-slate-400 uppercase mb-2 flex items-center gap-1.5">
+                    <Globe className="w-3.5 h-3.5 text-cyan-400" /> Languages Known
+                  </h4>
+                  <div className="text-xs font-medium text-slate-200">
+                    {spokenLanguages.join(', ')}
+                  </div>
                 </div>
-              </div>
-              <div>
-                <h4 className="text-xs font-mono text-slate-400 uppercase mb-2 flex items-center gap-1.5">
-                  <Heart className="w-3.5 h-3.5 text-pink-400" /> Hobbies & Interests
-                </h4>
-                <div className="text-xs font-medium text-slate-200">
-                  {hobbies.join(' • ')}
+              )}
+              {hobbies && (
+                <div>
+                  <h4 className="text-xs font-mono text-slate-400 uppercase mb-2 flex items-center gap-1.5">
+                    <Heart className="w-3.5 h-3.5 text-pink-400" /> Hobbies & Interests
+                  </h4>
+                  <div className="text-xs font-medium text-slate-200">
+                    {hobbies.join(' • ')}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </motion.div>
 
         </div>
 
         {/* Feature Highlights Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {highlights.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass-card glass-card-hover rounded-2xl p-6 border border-slate-800/80 flex flex-col justify-between"
-            >
-              <div className="p-3 rounded-xl bg-slate-800/80 w-fit mb-4 border border-slate-700">
-                {iconMap[index]}
-              </div>
-              <div>
-                <h4 className="text-lg font-bold text-white mb-2">{item.title}</h4>
-                <p className="text-slate-400 text-xs leading-relaxed">{item.desc}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {highlights && highlights.length > 0 && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {highlights.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="glass-card glass-card-hover rounded-2xl p-6 border border-slate-800/80 flex flex-col justify-between"
+              >
+                <div className="p-3 rounded-xl bg-slate-800/80 w-fit mb-4 border border-slate-700">
+                  {iconMap[index] || <Sparkles className="w-6 h-6 text-cyan-400" />}
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-white mb-2">{item.title}</h4>
+                  <p className="text-slate-400 text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        )}
 
       </div>
     </section>

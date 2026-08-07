@@ -31,7 +31,8 @@ export const portfolioData = {
       { title: "Relational & NoSQL Databases", desc: "Architecting MySQL, MongoDB, and MongoDB Atlas databases for fast CRUD operations and reporting." },
       { title: "AI & Computer Vision", desc: "Developing real-time YOLOv8, OpenCV, and TensorFlow object and intrusion detection systems." }
     ],
-    spokenLanguages: ["English", "Kannada", "Hindi"]
+    spokenLanguages: ["English", "Kannada", "Hindi"],
+    hobbies: ["Fitness", "Listening to Music", "Data Analysis"]
   },
 
   socialLinks: {
@@ -41,6 +42,17 @@ export const portfolioData = {
     leetcode: "https://leetcode.com/kirankr9343",
     hackerrank: "https://hackerrank.com/kirankr9343"
   },
+
+  coursework: [
+    "Data Analysis",
+    "Database Management",
+    "Statistics",
+    "Data Structures",
+    "Algorithm Analysis",
+    "Operating Systems",
+    "Computer Networks",
+    "Computer Architecture"
+  ],
 
   stats: [
     { id: 1, count: 15, suffix: "+", label: "Full Stack & Data Projects" },
