@@ -1,8 +1,10 @@
 import kiranPhoto from '../assets/kiran-photo.jpg';
-import resumePdf from '../assets/Kiran_KR_Resume.pdf';
 import projectSalesImg from '../assets/project-sales.jpg';
 import projectAnimalImg from '../assets/project-animal.jpg';
 import projectCarImg from '../assets/project-car.jpg';
+
+// Absolute/Relative public path for the official 1-page resume PDF
+const officialResumePdfPath = `${import.meta.env.BASE_URL}Kiran_KR_Resume.pdf`;
 
 export const portfolioData = {
   personalInfo: {
@@ -20,7 +22,7 @@ export const portfolioData = {
     phone: "+91 82175 63366",
     location: "Chikkamagaluru & Bengaluru, Karnataka",
     profileImage: kiranPhoto,
-    resumeUrl: resumePdf,
+    resumeUrl: officialResumePdfPath,
     aboutSummary: "I am a Data Analyst and AI & Data Science Engineering student with strong hands-on experience in business analytics, data visualization, and database management. I specialize in turning complex raw data into clear, actionable business dashboards using Power BI, SQL, Excel, and Python.",
     highlights: [
       { title: "Blinkit & Power BI Dashboards", desc: "Building interactive dashboards with KPI cards, slicers, revenue analysis, and regional outlet performance trends." },
