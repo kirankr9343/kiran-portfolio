@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './', // Ensures relative asset paths for GitHub Pages, Vercel, and Netlify deployment
+  base: '/kiran-portfolio/', // Base path for GitHub Pages deployment (https://kirankr9343.github.io/kiran-portfolio/)
   server: {
     port: 3000,
     open: true
