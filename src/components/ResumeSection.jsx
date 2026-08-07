@@ -44,15 +44,16 @@ export const ResumeSection = () => {
               <p className="text-slate-400 text-xs mt-2">{location} | {email} | {phone}</p>
             </div>
 
-            <button
-              onClick={() => {
-                window.print();
-              }}
+            <a
+              href={portfolioData.personalInfo.resumeUrl}
+              download="Kiran_KR_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105 transition-all w-fit"
             >
               <Download className="w-4 h-4" />
-              Print / Save Resume PDF
-            </button>
+              Download Resume PDF
+            </a>
           </div>
 
           {/* Body Sections */}

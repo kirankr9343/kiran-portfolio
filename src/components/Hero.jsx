@@ -83,7 +83,10 @@ export const Hero = () => {
               </ScrollLink>
 
               <a
-                href="#resume"
+                href={portfolioData.personalInfo.resumeUrl}
+                download="Kiran_KR_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl glass-card text-slate-200 font-semibold text-sm hover:border-cyan-500/50 hover:text-cyan-400 hover:scale-[1.02] active:scale-[0.98] transition-all"
               >
                 <Download className="w-4 h-4 text-cyan-400" />
