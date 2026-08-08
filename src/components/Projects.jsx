@@ -4,7 +4,6 @@ import VanillaTilt from 'vanilla-tilt';
 import { portfolioData } from '../data/portfolioData';
 import { 
   Github, 
-  ExternalLink, 
   BarChart3, 
   X, 
   Maximize2,
@@ -51,7 +50,7 @@ export const Projects = () => {
             RESUME PROJECT HIGHLIGHTS
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Key <span className="gradient-text">Projects</span>
+            Featured <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-slate-400 text-sm mt-3">
             Data Analytics, Power BI Dashboards, SQL Database Management, and Computer Vision.
@@ -60,7 +59,7 @@ export const Projects = () => {
         </div>
 
         {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -126,25 +125,16 @@ export const Projects = () => {
                   </div>
 
                   <div>
-                    {/* Action Links */}
-                    <div className="flex items-center gap-3 pt-4 border-t border-slate-800/80">
+                    {/* GitHub Code Link Only */}
+                    <div className="pt-4 border-t border-slate-800/80">
                       <a
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 inline-flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-200 text-xs font-semibold hover:border-cyan-500/50 hover:text-cyan-400 transition-all"
+                        className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-200 text-xs font-semibold hover:border-cyan-500/50 hover:text-cyan-400 transition-all"
                       >
-                        <Github className="w-3.5 h-3.5" />
-                        Code
-                      </a>
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 inline-flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-semibold shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:scale-[1.02] transition-all"
-                      >
-                        <ExternalLink className="w-3.5 h-3.5" />
-                        Demo
+                        <Github className="w-4 h-4" />
+                        View Code on GitHub
                       </a>
                     </div>
                   </div>
@@ -206,22 +196,14 @@ export const Projects = () => {
                   ))}
                 </ul>
 
-                <div className="flex gap-4">
+                <div>
                   <a
                     href={selectedProject.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-center text-sm flex items-center justify-center gap-2"
+                    className="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-center text-sm flex items-center justify-center gap-2"
                   >
-                    <Github className="w-4 h-4" /> GitHub Repository
-                  </a>
-                  <a
-                    href={selectedProject.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-center text-sm flex items-center justify-center gap-2"
-                  >
-                    <ExternalLink className="w-4 h-4" /> Live Demo
+                    <Github className="w-4 h-4" /> View GitHub Repository
                   </a>
                 </div>
               </motion.div>

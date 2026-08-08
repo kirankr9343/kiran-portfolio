@@ -54,7 +54,7 @@ export const portfolioData = {
   ],
 
   stats: [
-    { id: 1, count: 4, suffix: "", label: "Projects Completed" },
+    { id: 1, count: 10, suffix: "+", label: "Projects Completed" },
     { id: 2, count: 1, suffix: "", label: "Full Stack Internship" },
     { id: 3, count: 6, suffix: "", label: "Professional Certifications" },
     { id: 4, count: 8.43, suffix: " / 10", label: "B.E. CGPA (NMIT)" }
@@ -157,7 +157,6 @@ export const portfolioData = {
       technologies: ["Power BI", "Excel", "SQL", "DAX", "Data Visualization"],
       image: projectSalesImg,
       github: "https://github.com/kirankr9343",
-      demo: "https://github.com/kirankr9343",
       featured: true
     },
     {
@@ -175,7 +174,6 @@ export const portfolioData = {
       technologies: ["Python", "YOLOv8", "OpenCV", "TensorFlow", "Flask"],
       image: projectObjectImg,
       github: "https://github.com/kirankr9343",
-      demo: "https://github.com/kirankr9343",
       featured: true
     },
     {
@@ -193,7 +191,6 @@ export const portfolioData = {
       technologies: ["HTML", "CSS", "JavaScript", "Python", "MySQL"],
       image: projectCarImg,
       github: "https://github.com/kirankr9343",
-      demo: "https://github.com/kirankr9343",
       featured: false
     },
     {
@@ -210,7 +207,6 @@ export const portfolioData = {
       technologies: ["Python", "YOLOv8", "OpenCV", "Flask", "MySQL"],
       image: projectAnimalImg,
       github: "https://github.com/kirankr9343",
-      demo: "https://github.com/kirankr9343",
       featured: false
     }
   ],
