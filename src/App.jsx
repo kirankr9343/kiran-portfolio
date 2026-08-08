@@ -19,28 +19,47 @@ import { Footer } from './components/Footer';
 
 export function App() {
   const [loading, setLoading] = useState(true);
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('kiran_portfolio_theme') || 'dark';
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+      root.classList.remove('light');
+    } else {
+      root.classList.add('light');
+      root.classList.remove('dark');
+    }
+    localStorage.setItem('kiran_portfolio_theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+  };
 
   useEffect(() => {
     AOS.init({
-      duration: 600,
+      duration: 400,
       once: true,
       easing: 'ease-out'
     });
 
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 800);
+    }, 600);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#090d16] text-slate-100 font-sans selection:bg-cyan-500 selection:text-black overflow-hidden">
+    <div className="relative min-h-screen bg-[#090d16] text-slate-100 font-sans selection:bg-cyan-500 selection:text-black overflow-hidden transition-colors duration-200">
       {loading && <LoadingScreen />}
 
       <ScrollProgress />
 
-      <Navbar />
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
 
       <main className="relative z-10">
         <Hero />

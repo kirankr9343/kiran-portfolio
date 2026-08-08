@@ -1,6 +1,5 @@
 import React from 'react';
 import { TypeAnimation } from 'react-type-animation';
-import { motion } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
 import { 
   Download, 
@@ -29,12 +28,8 @@ export const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           {/* Left Text Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-7 flex flex-col text-left"
-          >
+          <div className="lg:col-span-7 flex flex-col text-left">
+            
             {/* Status Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/50 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-6 w-fit">
               <span className="w-2 h-2 rounded-full bg-cyan-400" />
@@ -73,9 +68,9 @@ export const Hero = () => {
               <ScrollLink
                 to="projects"
                 smooth={true}
-                duration={500}
+                duration={400}
                 offset={-70}
-                className="cursor-pointer inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all"
+                className="cursor-pointer inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm shadow-md hover:opacity-90 transition-opacity"
               >
                 <Briefcase className="w-4 h-4" />
                 View Projects
@@ -86,7 +81,7 @@ export const Hero = () => {
                 download="Kiran_KR_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl glass-card text-slate-200 font-semibold text-sm hover:border-cyan-500/50 hover:text-cyan-400 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl glass-card text-slate-200 font-semibold text-sm hover:border-cyan-500/50 hover:text-cyan-400 transition-colors"
               >
                 <Download className="w-4 h-4 text-cyan-400" />
                 Download Resume PDF
@@ -95,9 +90,9 @@ export const Hero = () => {
               <ScrollLink
                 to="contact"
                 smooth={true}
-                duration={500}
+                duration={400}
                 offset={-70}
-                className="cursor-pointer inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-700 bg-slate-900/60 text-slate-300 hover:text-white hover:bg-slate-800 transition-all text-sm font-semibold"
+                className="cursor-pointer inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-700 bg-slate-900/60 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors text-sm font-semibold"
               >
                 <Send className="w-4 h-4 text-blue-400" />
                 Contact Me
@@ -112,7 +107,7 @@ export const Hero = () => {
                   href={linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-lg glass-card hover:border-cyan-500/50 hover:text-cyan-400 text-slate-400 transition-all"
+                  className="p-2.5 rounded-lg glass-card hover:border-cyan-500/50 hover:text-cyan-400 text-slate-400 transition-colors"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-4 h-4" />
@@ -121,29 +116,24 @@ export const Hero = () => {
                   href={github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2.5 rounded-lg glass-card hover:border-cyan-500/50 hover:text-cyan-400 text-slate-400 transition-all"
+                  className="p-2.5 rounded-lg glass-card hover:border-cyan-500/50 hover:text-cyan-400 text-slate-400 transition-colors"
                   aria-label="GitHub"
                 >
                   <Github className="w-4 h-4" />
                 </a>
                 <a
                   href={email}
-                  className="p-2.5 rounded-lg glass-card hover:border-cyan-500/50 hover:text-cyan-400 text-slate-400 transition-all"
+                  className="p-2.5 rounded-lg glass-card hover:border-cyan-500/50 hover:text-cyan-400 text-slate-400 transition-colors"
                   aria-label="Email"
                 >
                   <Mail className="w-4 h-4" />
                 </a>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Image Graphic & Compact Photo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="lg:col-span-5 relative flex items-center justify-center"
-          >
+          <div className="lg:col-span-5 relative flex items-center justify-center">
             {/* Compact Card Frame */}
             <div className="relative w-64 sm:w-72 aspect-[3/4] rounded-2xl p-1 bg-slate-800 border border-slate-700/80 shadow-xl">
               
@@ -162,24 +152,24 @@ export const Hero = () => {
               </div>
 
               {/* Minimal Tech Badges */}
-              <div className="absolute -top-3 -left-4 px-3 py-1 rounded-lg bg-slate-900/90 border border-slate-700 flex items-center gap-1.5 text-[11px] font-medium text-slate-200">
+              <div className="absolute -top-3 -left-4 px-3 py-1 rounded-lg bg-slate-900 border border-slate-700 flex items-center gap-1.5 text-[11px] font-medium text-slate-200 shadow-sm">
                 <Layout className="w-3.5 h-3.5 text-cyan-400" /> Web Dev
               </div>
 
-              <div className="absolute top-1/3 -right-4 px-3 py-1 rounded-lg bg-slate-900/90 border border-slate-700 flex items-center gap-1.5 text-[11px] font-medium text-slate-200">
+              <div className="absolute top-1/3 -right-4 px-3 py-1 rounded-lg bg-slate-900 border border-slate-700 flex items-center gap-1.5 text-[11px] font-medium text-slate-200 shadow-sm">
                 <Code className="w-3.5 h-3.5 text-blue-400" /> Python
               </div>
 
-              <div className="absolute -bottom-3 -left-2 px-3 py-1 rounded-lg bg-slate-900/90 border border-slate-700 flex items-center gap-1.5 text-[11px] font-medium text-slate-200">
+              <div className="absolute -bottom-3 -left-2 px-3 py-1 rounded-lg bg-slate-900 border border-slate-700 flex items-center gap-1.5 text-[11px] font-medium text-slate-200 shadow-sm">
                 <Database className="w-3.5 h-3.5 text-indigo-400" /> SQL & DBs
               </div>
 
-              <div className="absolute bottom-1/4 -left-5 px-3 py-1 rounded-lg bg-slate-900/90 border border-slate-700 flex items-center gap-1.5 text-[11px] font-medium text-slate-200">
+              <div className="absolute bottom-1/4 -left-5 px-3 py-1 rounded-lg bg-slate-900 border border-slate-700 flex items-center gap-1.5 text-[11px] font-medium text-slate-200 shadow-sm">
                 <Cpu className="w-3.5 h-3.5 text-purple-400" /> YOLOv8
               </div>
 
             </div>
-          </motion.div>
+          </div>
 
         </div>
 
@@ -188,12 +178,12 @@ export const Hero = () => {
           <ScrollLink
             to="about"
             smooth={true}
-            duration={500}
+            duration={400}
             offset={-70}
-            className="cursor-pointer flex flex-col items-center gap-1.5 text-slate-500 hover:text-cyan-400 transition-colors group"
+            className="cursor-pointer flex flex-col items-center gap-1 text-slate-500 hover:text-cyan-400 transition-colors group"
           >
             <span className="text-[11px] font-mono tracking-widest uppercase">Scroll</span>
-            <ArrowDown className="w-3.5 h-3.5 animate-bounce text-cyan-400" />
+            <ArrowDown className="w-3.5 h-3.5 text-cyan-400" />
           </ScrollLink>
         </div>
       </div>
