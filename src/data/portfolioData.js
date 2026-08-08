@@ -1,6 +1,7 @@
 import kiranPhoto from '../assets/kiran-photo.jpg';
 import resumePdf from '../assets/Kiran_KR_Resume.pdf';
 import buildathonCertImg from '../assets/buildathon-cert.jpg';
+import projectSalesImg from '../assets/project-sales.jpg';
 import projectAnimalImg from '../assets/project-animal.jpg';
 import projectObjectImg from '../assets/project-object.jpg';
 import projectCarImg from '../assets/project-car.jpg';
@@ -10,21 +11,29 @@ const officialResumePdfPath = `${import.meta.env.BASE_URL}Kiran_KR_Resume.pdf`;
 export const portfolioData = {
   personalInfo: {
     name: "Kiran K R",
-    title: "Full Stack Developer | AI & Data Science Engineer",
+    title: "Full Stack Developer | Data Analyst & AI Engineer",
     typingTitles: [
-      "Full Stack Web Developer",
-      "AI & Data Science Engineer",
+      "Full Stack Web Developer (React & Node.js)",
+      "Data Analyst & Power BI Specialist",
+      "RESTful API & Database Engineer",
       "Python & Machine Learning Developer",
-      "React.js & Node.js Developer",
-      "MySQL & Database Engineer"
+      "MERN & SQL Database Specialist",
+      "Prompt Engineering & AI Tools Developer"
     ],
     email: "kirankr93439343@gmail.com",
     phone: "+91 82175 63366",
-    location: "Chikkamagaluru, Karnataka",
+    location: "Chikkamagaluru & Bengaluru, Karnataka",
     profileImage: kiranPhoto,
     resumeUrl: officialResumePdfPath,
-    aboutSummary: "I am a Computer Science & AI/Data Science Engineering student skilled in building responsive full-stack web applications, RESTful APIs, relational database systems, and machine learning models.",
-    spokenLanguages: ["English", "Kannada", "Hindi"]
+    aboutSummary: "I am a versatile Full Stack Developer and Data Analyst specializing in building scalable web applications, RESTful APIs, relational database systems, and interactive data analytics dashboards. With a strong foundation in Artificial Intelligence & Data Science (CGPA: 8.43), I combine full-stack web engineering (React, Node, Express, MongoDB, MySQL) with data analytics and machine learning (Python, SQL, Power BI, OpenCV, YOLOv8).",
+    highlights: [
+      { title: "Full Stack Web Development", desc: "Building responsive React.js frontends & RESTful Node/Express backends, improving page load performance by 30%." },
+      { title: "Data Analytics & Power BI", desc: "Designing interactive Power BI sales dashboards, data transformations, and business KPI reporting." },
+      { title: "Database Management & SQL", desc: "Architecting MySQL, MongoDB, and MongoDB Atlas databases for fast CRUD operations, indexing, and analytics." },
+      { title: "AI & Computer Vision", desc: "Developing real-time YOLOv8, OpenCV, and TensorFlow object and intrusion detection systems with 90%+ accuracy." }
+    ],
+    spokenLanguages: ["English", "Kannada", "Hindi"],
+    hobbies: ["Fitness", "Listening to Music", "Data Analysis"]
   },
 
   socialLinks: {
@@ -33,10 +42,21 @@ export const portfolioData = {
     email: "mailto:kirankr93439343@gmail.com"
   },
 
+  coursework: [
+    "Data Analysis",
+    "Database Management",
+    "Statistics",
+    "Data Structures",
+    "Algorithm Analysis",
+    "Operating Systems",
+    "Computer Networks",
+    "Computer Architecture"
+  ],
+
   stats: [
-    { id: 1, count: 3, suffix: "", label: "Projects Completed" },
+    { id: 1, count: 4, suffix: "", label: "Projects Completed" },
     { id: 2, count: 1, suffix: "", label: "Full Stack Internship" },
-    { id: 3, count: 3, suffix: "", label: "Certifications" },
+    { id: 3, count: 6, suffix: "", label: "Professional Certifications" },
     { id: 4, count: 8.43, suffix: " / 10", label: "B.E. CGPA (NMIT)" }
   ],
 
@@ -66,7 +86,7 @@ export const portfolioData = {
       period: "Sept 2024 – Aug 2027",
       grade: "CGPA: 8.43 / 10.0",
       highlights: [
-        "Specializing in AI, Data Science, Machine Learning, Computer Vision, and Software Engineering."
+        "Specializing in AI, Data Science, Machine Learning, Computer Vision, Full Stack Web Engineering, and Databases."
       ]
     },
     {
@@ -77,49 +97,75 @@ export const portfolioData = {
       period: "June 2021 – March 2024",
       grade: "Percentile: 78.8%",
       highlights: [
-        "Core Computer Science subjects, Web Development, Relational Databases, and Programming Fundamentals."
+        "Core Computer Science subjects, Web Development, Relational Databases, and Software Engineering."
       ]
     }
   ],
 
   skills: {
     languages: [
-      { name: "Python", level: 90, icon: "Code2" },
+      { name: "Python", level: 92, icon: "Code2" },
       { name: "Java", level: 80, icon: "FileCode2" },
-      { name: "SQL", level: 90, icon: "Database" },
-      { name: "JavaScript", level: 88, icon: "Code2" }
+      { name: "SQL", level: 92, icon: "Database" },
+      { name: "JavaScript", level: 90, icon: "Code2" }
     ],
     webDev: [
       { name: "HTML5 & CSS3", level: 92, icon: "Layout" },
-      { name: "JavaScript (ES6+)", level: 88, icon: "Code2" },
-      { name: "React.js", level: 88, icon: "Code2" },
-      { name: "Node.js & Express.js", level: 85, icon: "Server" },
-      { name: "REST APIs", level: 90, icon: "Briefcase" }
+      { name: "JavaScript (ES6+)", level: 90, icon: "Code2" },
+      { name: "React.js", level: 90, icon: "Code2" },
+      { name: "Node.js & Express.js", level: 88, icon: "Server" },
+      { name: "REST APIs", level: 92, icon: "Briefcase" }
+    ],
+    analytics: [
+      { name: "Power BI", level: 95, icon: "BarChart3" },
+      { name: "Microsoft Excel", level: 92, icon: "Table" },
+      { name: "Data Cleaning", level: 95, icon: "Filter" },
+      { name: "Data Visualization", level: 94, icon: "PieChart" },
+      { name: "Data Analysis & Statistics", level: 90, icon: "TrendingUp" }
     ],
     fullStackDb: [
-      { name: "MySQL", level: 90, icon: "Database" },
-      { name: "MongoDB & MongoDB Atlas", level: 85, icon: "Server" }
+      { name: "MySQL", level: 92, icon: "Database" },
+      { name: "MongoDB", level: 86, icon: "Server" },
+      { name: "MongoDB Atlas", level: 85, icon: "Server" }
     ],
     aiTools: [
-      { name: "OpenAI API", level: 85, icon: "Cpu" },
-      { name: "Google AI Studio", level: 82, icon: "Cpu" },
-      { name: "Prompt Engineering", level: 88, icon: "Sparkles" }
+      { name: "OpenAI API", level: 88, icon: "Cpu" },
+      { name: "Google AI Studio", level: 85, icon: "Cpu" },
+      { name: "Prompt Engineering", level: 90, icon: "Sparkles" }
     ],
     toolsPlatforms: [
       { name: "Git & GitHub", level: 90, icon: "Github" },
       { name: "VS Code", level: 92, icon: "Laptop" },
-      { name: "Jupyter Notebook & Google Colab", level: 88, icon: "BookOpen" },
-      { name: "Postman & Vercel", level: 85, icon: "Globe" }
+      { name: "Jupyter Notebook & Colab", level: 88, icon: "BookOpen" },
+      { name: "Postman & Vercel", level: 86, icon: "Globe" }
     ]
   },
 
   projects: [
     {
       id: 1,
+      title: "Blinkit Sales Dashboard using Power BI",
+      subtitle: "Feb 2026",
+      technologiesSummary: "Power BI | Excel | SQL | DAX",
+      description: "Interactive e-commerce grocery analytics dashboard built to analyze sales performance, revenue metrics, monthly trends, and regional outlet performance.",
+      bullets: [
+        "Cleaned and transformed sales data using Excel and SQL.",
+        "Built interactive dashboards to visualize revenue, profit, monthly sales, and regional performance.",
+        "Used charts, slicers, and KPIs to help identify business trends.",
+        "Created reports to support data-driven business decisions."
+      ],
+      technologies: ["Power BI", "Excel", "SQL", "DAX", "Data Visualization"],
+      image: projectSalesImg,
+      github: "https://github.com/kirankr9343",
+      demo: "https://github.com/kirankr9343",
+      featured: true
+    },
+    {
+      id: 2,
       title: "Object Detection System",
       subtitle: "Sep 2025",
       technologiesSummary: "Python | YOLOv8 | OpenCV | TensorFlow | Flask",
-      description: "Real-time computer vision system to identify and classify multiple objects from images and live video streams.",
+      description: "Real-time computer vision system to identify and classify multiple objects from images and live video streams with 90%+ accuracy.",
       bullets: [
         "Developed a real-time object detection system using YOLOv8 and OpenCV to identify and classify multiple objects from images and live video streams, optimizing inference for high-speed detection and object tracking.",
         "Built a Flask-based web interface for live monitoring, detection visualization, and automated result management, providing an intuitive dashboard for real-time predictions.",
@@ -133,7 +179,7 @@ export const portfolioData = {
       featured: true
     },
     {
-      id: 2,
+      id: 3,
       title: "Car Booking Website",
       subtitle: "Apr 2024",
       technologiesSummary: "HTML | CSS | JavaScript | Python | MySQL",
@@ -148,10 +194,10 @@ export const portfolioData = {
       image: projectCarImg,
       github: "https://github.com/kirankr9343",
       demo: "https://github.com/kirankr9343",
-      featured: true
+      featured: false
     },
     {
-      id: 3,
+      id: 4,
       title: "Animal Intrusion Detection System",
       subtitle: "Feb 2026",
       technologiesSummary: "Python | YOLOv8 | OpenCV | Flask | MySQL",
@@ -187,14 +233,30 @@ export const portfolioData = {
   certifications: [
     {
       id: 1,
-      title: "Science of Happiness and Wellbeing",
-      issuer: "IIT Madras (NPTEL)",
-      date: "Apr 2026",
-      icon: "Smile",
+      title: "Analysis of Power BI",
+      issuer: "Microsoft",
+      date: "Jan 2026",
+      icon: "BarChart2",
       verifyUrl: "#"
     },
     {
       id: 2,
+      title: "SQL Certification",
+      issuer: "HackerRank",
+      date: "Apr 2025",
+      icon: "Database",
+      verifyUrl: "#"
+    },
+    {
+      id: 3,
+      title: "Data Analytics Essentials",
+      issuer: "Cisco Networking Academy",
+      date: "Jan 2025",
+      icon: "BarChart2",
+      verifyUrl: "#"
+    },
+    {
+      id: 4,
       title: "Full Stack Developer at Rank Book Academy",
       issuer: "Rank Book Academy",
       date: "Jan – Apr 2024",
@@ -202,11 +264,19 @@ export const portfolioData = {
       verifyUrl: "#"
     },
     {
-      id: 3,
+      id: 5,
       title: "Deep Learning for Developers",
       issuer: "Infosys's Platform",
       date: "Mar 2026",
       icon: "Cpu",
+      verifyUrl: "#"
+    },
+    {
+      id: 6,
+      title: "Science of Happiness and Wellbeing",
+      issuer: "IIT Madras (NPTEL)",
+      date: "Apr 2026",
+      icon: "Smile",
       verifyUrl: "#"
     }
   ]

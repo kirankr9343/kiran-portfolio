@@ -15,18 +15,24 @@ import {
   Globe,
   Cpu,
   Layout,
-  BookOpen
+  BookOpen,
+  BarChart3,
+  Table,
+  Filter,
+  PieChart,
+  TrendingUp
 } from 'lucide-react';
 
 export const Skills = () => {
   const [activeTab, setActiveTab] = useState('all');
-  const { languages, webDev, fullStackDb, aiTools, toolsPlatforms } = portfolioData.skills;
+  const { languages, webDev, analytics, fullStackDb, aiTools, toolsPlatforms } = portfolioData.skills;
 
   const categories = [
     { id: 'all', name: 'All Skills', icon: <Sparkles className="w-4 h-4" /> },
+    { id: 'webDev', name: 'Web Dev & Full Stack', icon: <Layout className="w-4 h-4" /> },
+    { id: 'analytics', name: 'Data Analysis & BI', icon: <BarChart3 className="w-4 h-4" /> },
+    { id: 'fullStackDb', name: 'Databases (SQL/NoSQL)', icon: <Server className="w-4 h-4" /> },
     { id: 'languages', name: 'Languages', icon: <Code2 className="w-4 h-4" /> },
-    { id: 'webDev', name: 'Web Development', icon: <Layout className="w-4 h-4" /> },
-    { id: 'fullStackDb', name: 'Full Stack & Database', icon: <Server className="w-4 h-4" /> },
     { id: 'aiTools', name: 'AI Tools', icon: <Cpu className="w-4 h-4" /> },
     { id: 'toolsPlatforms', name: 'Tools & Platforms', icon: <Wrench className="w-4 h-4" /> },
   ];
@@ -38,6 +44,11 @@ export const Skills = () => {
     Layout: <Layout className="w-4 h-4 text-cyan-400" />,
     Server: <Server className="w-4 h-4 text-indigo-400" />,
     Briefcase: <Briefcase className="w-4 h-4 text-blue-400" />,
+    BarChart3: <BarChart3 className="w-4 h-4 text-cyan-400" />,
+    Table: <Table className="w-4 h-4 text-emerald-400" />,
+    Filter: <Filter className="w-4 h-4 text-yellow-400" />,
+    PieChart: <PieChart className="w-4 h-4 text-purple-400" />,
+    TrendingUp: <TrendingUp className="w-4 h-4 text-indigo-400" />,
     Cpu: <Cpu className="w-4 h-4 text-purple-400" />,
     Sparkles: <Sparkles className="w-4 h-4 text-amber-400" />,
     Github: <Github className="w-4 h-4 text-slate-300" />,
@@ -48,21 +59,24 @@ export const Skills = () => {
 
   const getFilteredSkills = () => {
     switch (activeTab) {
-      case 'languages':
-        return [{ title: 'Languages', items: languages || [] }];
       case 'webDev':
-        return [{ title: 'Web Development', items: webDev || [] }];
+        return [{ title: 'Web Development & Full Stack', items: webDev || [] }];
+      case 'analytics':
+        return [{ title: 'Data Analysis & Business Intelligence', items: analytics || [] }];
       case 'fullStackDb':
-        return [{ title: 'Full Stack & Database', items: fullStackDb || [] }];
+        return [{ title: 'Databases & Storage', items: fullStackDb || [] }];
+      case 'languages':
+        return [{ title: 'Programming & Query Languages', items: languages || [] }];
       case 'aiTools':
-        return [{ title: 'AI Tools & Engineering', items: aiTools || [] }];
+        return [{ title: 'AI Tools & Prompt Engineering', items: aiTools || [] }];
       case 'toolsPlatforms':
-        return [{ title: 'Tools & Platforms', items: toolsPlatforms || [] }];
+        return [{ title: 'Tools & Developer Platforms', items: toolsPlatforms || [] }];
       default:
         return [
+          { title: 'Web Dev & Full Stack', items: webDev || [] },
+          { title: 'Data Analysis & BI', items: analytics || [] },
+          { title: 'Databases & Storage', items: fullStackDb || [] },
           { title: 'Languages', items: languages || [] },
-          { title: 'Web Development', items: webDev || [] },
-          { title: 'Full Stack & Database', items: fullStackDb || [] },
           { title: 'AI Tools', items: aiTools || [] },
           { title: 'Tools & Platforms', items: toolsPlatforms || [] }
         ];
@@ -77,7 +91,7 @@ export const Skills = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs font-mono mb-3">
             <Wrench className="w-3.5 h-3.5" />
-            RESUME TECHNICAL SKILLS
+            FULL STACK & DATA ANALYTICS SKILLS
           </div>
           <h2 className="text-3xl font-extrabold text-white tracking-tight">
             Technical <span className="gradient-text">Skills</span>
