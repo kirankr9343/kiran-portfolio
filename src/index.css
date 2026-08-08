@@ -14,7 +14,7 @@
     font-family: 'Inter', sans-serif;
   }
 
-  /* Light Mode */
+  /* Light Mode Base */
   html.light body {
     background-color: #f8fafc;
     color: #0f172a;
@@ -38,6 +38,7 @@
   }
   html.light ::-webkit-scrollbar-thumb {
     background: #cbd5e1;
+    border-radius: 4px;
     border: 1px solid #94a3b8;
   }
   ::-webkit-scrollbar-thumb:hover {
@@ -47,7 +48,7 @@
 
 @layer utilities {
   .glass-card {
-    background: rgba(15, 23, 42, 0.7);
+    background: rgba(15, 23, 42, 0.75);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -55,11 +56,11 @@
   }
 
   html.light .glass-card {
-    background: rgba(255, 255, 255, 0.95);
+    background: #ffffff;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(226, 232, 240, 0.8);
-    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.04);
   }
 
   .glass-card-hover {
@@ -70,41 +71,168 @@
     box-shadow: 0 6px 24px 0 rgba(6, 182, 212, 0.12);
   }
 
-  .gradient-text {
-    background: linear-gradient(135deg, #0284c7 0%, #06b6d4 50%, #2563eb 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  html.light .glass-card-hover:hover {
+    border-color: #0284c7;
+    box-shadow: 0 6px 24px 0 rgba(2, 132, 199, 0.12);
   }
 
-  html.dark .gradient-text {
+  .gradient-text {
     background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 50%, #3b82f6 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  html.light .gradient-text {
+    background: linear-gradient(135deg, #0284c7 0%, #0891b2 50%, #1d4ed8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
-/* Light mode text & element overrides */
+/* Comprehensive Light Mode Refinements */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6 {
+  color: #0f172a;
+}
+
+html.light p {
+  color: #475569;
+}
+
 html.light .text-white {
   color: #0f172a !important;
 }
+
 html.light .text-slate-100 {
   color: #0f172a !important;
 }
+
 html.light .text-slate-200 {
   color: #1e293b !important;
 }
+
 html.light .text-slate-300 {
   color: #334155 !important;
 }
+
 html.light .text-slate-400 {
-  color: #475569 !important;
+  color: #64748b !important;
 }
+
+html.light .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Accents in Light Mode */
+html.light .text-cyan-400 {
+  color: #0284c7 !important;
+}
+
+html.light .text-cyan-300 {
+  color: #0369a1 !important;
+}
+
+html.light .text-blue-400 {
+  color: #2563eb !important;
+}
+
+html.light .text-indigo-400 {
+  color: #4f46e5 !important;
+}
+
+html.light .text-purple-400 {
+  color: #7c3aed !important;
+}
+
+html.light .text-amber-400 {
+  color: #d97706 !important;
+}
+
+html.light .text-amber-300 {
+  color: #b45309 !important;
+}
+
+/* Background Boxes in Light Mode */
 html.light .bg-slate-900 {
   background-color: #f1f5f9 !important;
 }
-html.light .border-slate-800 {
+
+html.light .bg-slate-900\/80 {
+  background-color: rgba(241, 245, 249, 0.9) !important;
+}
+
+html.light .bg-slate-900\/90 {
+  background-color: rgba(241, 245, 249, 0.95) !important;
+}
+
+html.light .bg-slate-900\/60 {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-slate-800 {
+  background-color: #e2e8f0 !important;
+}
+
+html.light .bg-slate-800\/80 {
+  background-color: #e2e8f0 !important;
+}
+
+html.light .bg-slate-800\/90 {
+  background-color: #cbd5e1 !important;
+}
+
+html.light .bg-slate-950\/40 {
+  background-color: #f8fafc !important;
+}
+
+html.light .bg-cyan-950\/40,
+html.light .bg-cyan-950\/50,
+html.light .bg-cyan-950\/60 {
+  background-color: #e0f2fe !important;
+  border-color: #bae6fd !important;
+  color: #0369a1 !important;
+}
+
+html.light .bg-amber-500\/15 {
+  background-color: #fef3c7 !important;
+  border-color: #fde68a !important;
+  color: #b45309 !important;
+}
+
+/* Borders in Light Mode */
+html.light .border-slate-800,
+html.light .border-slate-800\/80 {
   border-color: #e2e8f0 !important;
 }
-html.light .border-slate-700 {
+
+html.light .border-slate-700,
+html.light .border-slate-700\/80 {
   border-color: #cbd5e1 !important;
+}
+
+/* Dividers in Light Mode */
+html.light .divide-slate-800 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #e2e8f0 !important;
+}
+
+/* Input Fields in Light Mode */
+html.light input,
+html.light textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Navbar on scroll in light mode */
+html.light header {
+  border-color: #e2e8f0 !important;
 }

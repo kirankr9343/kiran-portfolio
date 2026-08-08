@@ -35,7 +35,7 @@ export const Navbar = ({ theme, toggleTheme }) => {
     <header
       className={`fixed top-0 left-0 w-full z-40 transition-all duration-200 ${
         scrolled
-          ? 'bg-[#070913]/85 backdrop-blur-md border-b border-slate-800 shadow-sm py-3'
+          ? 'bg-white/90 dark:bg-[#070913]/85 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm py-3'
           : 'bg-transparent py-4'
       }`}
     >
@@ -49,17 +49,17 @@ export const Navbar = ({ theme, toggleTheme }) => {
           className="cursor-pointer group flex items-center gap-2.5"
         >
           <div className="w-9 h-9 rounded-lg bg-gradient-to-tr from-cyan-500 to-blue-600 p-[1px] shadow-sm">
-            <div className="w-full h-full bg-[#070913] rounded-[7px] flex items-center justify-center">
-              <span className="text-cyan-400 font-bold font-mono text-base">
+            <div className="w-full h-full bg-white dark:bg-[#070913] rounded-[7px] flex items-center justify-center">
+              <span className="text-cyan-600 dark:text-cyan-400 font-bold font-mono text-base">
                 K
               </span>
             </div>
           </div>
           <div className="flex flex-col">
-            <span className="text-base font-bold tracking-tight text-white">
+            <span className="text-base font-bold tracking-tight text-slate-900 dark:text-white">
               Kiran K R
             </span>
-            <span className="text-[10px] text-slate-400 font-mono">Full Stack & AI Engineer</span>
+            <span className="text-[10px] text-slate-500 dark:text-slate-400 font-mono">Full Stack & AI Engineer</span>
           </div>
         </ScrollLink>
 
@@ -73,8 +73,8 @@ export const Navbar = ({ theme, toggleTheme }) => {
               smooth={true}
               offset={-70}
               duration={400}
-              activeClass="!text-cyan-400 font-semibold"
-              className="px-2.5 py-1.5 text-xs sm:text-sm text-slate-300 hover:text-cyan-400 transition-colors cursor-pointer"
+              activeClass="!text-cyan-600 dark:!text-cyan-400 font-semibold"
+              className="px-2.5 py-1.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors cursor-pointer"
             >
               {item.name}
             </ScrollLink>
@@ -87,7 +87,7 @@ export const Navbar = ({ theme, toggleTheme }) => {
           <button
             onClick={toggleTheme}
             aria-label="Toggle Light and Dark Mode"
-            className="p-2 rounded-lg glass-card border border-slate-700 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition-colors flex items-center gap-1.5 text-xs font-mono"
+            className="p-2 rounded-lg glass-card border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors flex items-center gap-1.5 text-xs font-mono"
             title={theme === 'dark' ? "Switch to Light Mode" : "Switch to Dark Mode"}
           >
             {theme === 'dark' ? (
@@ -97,7 +97,7 @@ export const Navbar = ({ theme, toggleTheme }) => {
               </>
             ) : (
               <>
-                <Moon className="w-4 h-4 text-cyan-400" />
+                <Moon className="w-4 h-4 text-blue-600" />
                 <span>Dark</span>
               </>
             )}
@@ -107,7 +107,7 @@ export const Navbar = ({ theme, toggleTheme }) => {
             to="contact"
             smooth={true}
             duration={400}
-            className="cursor-pointer inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-cyan-500 text-slate-950 font-semibold text-xs hover:bg-cyan-400 transition-colors"
+            className="cursor-pointer inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-cyan-600 dark:bg-cyan-500 text-white dark:text-slate-950 font-semibold text-xs hover:bg-cyan-700 dark:hover:bg-cyan-400 transition-colors"
           >
             <Sparkles className="w-3.5 h-3.5" />
             Contact
@@ -119,14 +119,14 @@ export const Navbar = ({ theme, toggleTheme }) => {
           <button
             onClick={toggleTheme}
             aria-label="Toggle Theme"
-            className="p-2 rounded-lg glass-card border border-slate-700 text-slate-300"
+            className="p-2 rounded-lg glass-card border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300"
           >
-            {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-cyan-400" />}
+            {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-blue-600" />}
           </button>
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 rounded-lg text-slate-400 hover:text-white"
+            className="p-2 rounded-lg text-slate-700 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -136,7 +136,7 @@ export const Navbar = ({ theme, toggleTheme }) => {
 
       {/* Mobile Navigation Drawer */}
       {isOpen && (
-        <div className="lg:hidden bg-[#070913]/95 border-b border-slate-800 px-4 pt-2 pb-6 space-y-2">
+        <div className="lg:hidden bg-white/95 dark:bg-[#070913]/95 border-b border-slate-200 dark:border-slate-800 px-4 pt-2 pb-6 space-y-2">
           {navItems.map((item) => (
             <ScrollLink
               key={item.name}
@@ -145,7 +145,7 @@ export const Navbar = ({ theme, toggleTheme }) => {
               offset={-70}
               duration={400}
               onClick={() => setIsOpen(false)}
-              className="block px-3 py-2 text-base text-slate-200 hover:text-cyan-400 font-medium"
+              className="block px-3 py-2 text-base text-slate-800 dark:text-slate-200 hover:text-cyan-600 dark:hover:text-cyan-400 font-medium"
             >
               {item.name}
             </ScrollLink>
