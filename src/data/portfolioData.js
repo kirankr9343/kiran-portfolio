@@ -1,5 +1,6 @@
 import kiranPhoto from '../assets/kiran-photo.jpg';
 import resumePdf from '../assets/Kiran_KR_Resume.pdf';
+import buildathonCertImg from '../assets/buildathon-cert.jpg';
 import projectAnimalImg from '../assets/project-animal.jpg';
 import projectObjectImg from '../assets/project-object.jpg';
 import projectCarImg from '../assets/project-car.jpg';
@@ -32,12 +33,28 @@ export const portfolioData = {
     email: "mailto:kirankr93439343@gmail.com"
   },
 
-  // Exact real stats from resume only
   stats: [
     { id: 1, count: 3, suffix: "", label: "Projects Completed" },
     { id: 2, count: 1, suffix: "", label: "Full Stack Internship" },
     { id: 3, count: 3, suffix: "", label: "Certifications" },
     { id: 4, count: 8.43, suffix: " / 10", label: "B.E. CGPA (NMIT)" }
+  ],
+
+  achievementsList: [
+    {
+      id: 1,
+      title: "State-Level Buildathon – Karnataka",
+      organization: "OpenAI Academy × NxtWave",
+      event: "OpenAI Academy × NxtWave Regional Buildathon – Karnataka",
+      location: "S-VYASA Deemed-to-be University, Bengaluru",
+      date: "7-Dec-2025",
+      recognition: "State-Level Selection",
+      achievement: "Selected for the State-Level Buildathon – Karnataka after successfully clearing the virtual qualification round of the Pan-India GenAI Buildathon.",
+      description: "Collaborated with a team to brainstorm, develop, and present a Generative AI solution at the offline state-level event in Bengaluru. Provided hands-on experience in Generative AI, rapid prototyping, problem-solving, teamwork, innovation, and building AI-driven solutions under real-world time constraints.",
+      tags: ["Generative AI", "AI", "Rapid Prototyping", "Problem Solving", "Teamwork", "Innovation"],
+      teamMembers: ["Kiran K R", "Prajwal N", "Mokshith B A", "Yashwanth M A"],
+      certificateImage: buildathonCertImg
+    }
   ],
 
   education: [
@@ -96,7 +113,6 @@ export const portfolioData = {
     ]
   },
 
-  // Exact 3 projects from resume
   projects: [
     {
       id: 1,
@@ -153,7 +169,6 @@ export const portfolioData = {
     }
   ],
 
-  // Exact 1 internship from resume
   experience: [
     {
       id: 1,
@@ -169,7 +184,6 @@ export const portfolioData = {
     }
   ],
 
-  // Exact 3 certifications from resume
   certifications: [
     {
       id: 1,
