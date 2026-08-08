@@ -3,8 +3,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 import { ScrollProgress } from './components/ScrollProgress';
-import { MouseGlow } from './components/MouseGlow';
-import { BackgroundCanvas } from './components/BackgroundCanvas';
 import { LoadingScreen } from './components/LoadingScreen';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -24,25 +22,23 @@ export function App() {
 
   useEffect(() => {
     AOS.init({
-      duration: 800,
+      duration: 600,
       once: true,
-      easing: 'ease-out-cubic'
+      easing: 'ease-out'
     });
 
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1200);
+    }, 800);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#070913] text-slate-100 font-sans selection:bg-cyan-500 selection:text-black overflow-hidden">
+    <div className="relative min-h-screen bg-[#090d16] text-slate-100 font-sans selection:bg-cyan-500 selection:text-black overflow-hidden">
       {loading && <LoadingScreen />}
 
       <ScrollProgress />
-      <MouseGlow />
-      <BackgroundCanvas />
 
       <Navbar />
 
