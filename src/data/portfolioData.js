@@ -1,6 +1,7 @@
 import kiranPhoto from '../assets/kiran-photo.jpg';
 import resumePdf from '../assets/Kiran_KR_Resume.pdf';
 import buildathonCertImg from '../assets/buildathon-cert.jpg';
+import projectNpsImg from '../assets/project-nps.jpg';
 import projectSalesImg from '../assets/project-sales.jpg';
 import projectAnimalImg from '../assets/project-animal.jpg';
 import projectObjectImg from '../assets/project-object.jpg';
@@ -28,8 +29,8 @@ export const portfolioData = {
     aboutSummary: "I am a versatile Full Stack Developer and Data Analyst specializing in building scalable web applications, RESTful APIs, relational database systems, and interactive data analytics dashboards. With a strong foundation in Artificial Intelligence & Data Science (CGPA: 8.43), I combine full-stack web engineering (React, Node, Express, MongoDB, MySQL) with data analytics and machine learning (Python, SQL, Power BI, OpenCV, YOLOv8).",
     highlights: [
       { title: "Full Stack Web Development", desc: "Building responsive React.js frontends & RESTful Node/Express backends, improving page load performance by 30%." },
-      { title: "Data Analytics & Power BI", desc: "Designing interactive Power BI sales dashboards, data transformations, and business KPI reporting." },
-      { title: "Database Management & SQL", desc: "Architecting MySQL, MongoDB, and MongoDB Atlas databases for fast CRUD operations, indexing, and analytics." },
+      { title: "Data Analytics & Power BI", desc: "Designing interactive Power BI sales & Voice of Customer dashboards, DAX measures, and business KPI reporting." },
+      { title: "Database Management & SQL", desc: "Architecting MySQL star-schema databases, writing complex CTEs, Window functions, and managing relational data." },
       { title: "AI & Computer Vision", desc: "Developing real-time YOLOv8, OpenCV, and TensorFlow object and intrusion detection systems with 90%+ accuracy." }
     ],
     spokenLanguages: ["English", "Kannada", "Hindi"],
@@ -144,6 +145,24 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
+      title: "Customer Feedback & NPS Analytics Dashboard",
+      subtitle: "2026",
+      technologiesSummary: "Python | MySQL | Power BI | Excel | Power Query | Power Automate",
+      description: "End-to-end Voice of Customer (VOC) analytics platform evaluating 5,190 cleaned customer survey responses across 4 geographic regions, 5 product categories, and 3 customer segments.",
+      bullets: [
+        "Engineered an automated Python data-cleaning pipeline to resolve 131 duplicate records, handle missing values, validate out-of-bounds ratings (0-10 NPS, 1-5 CSAT), and unify survey date formats.",
+        "Built a normalized MySQL star-schema database and authored 20+ advanced business queries using CTEs, Window Functions (DENSE_RANK), and conditional CASE aggregations.",
+        "Programmed an interactive Excel analysis report featuring dynamic formulas (COUNTIFS, AVERAGEIFS, XLOOKUP) and regional pivot summaries.",
+        "Designed a 3-page interactive Power BI dashboard featuring 18 custom DAX measures (Total Responses, NPS %, Average CSAT, Rolling 3M NPS) and automated incident escalation workflow concepts using Power Automate.",
+        "Business Impact & Key Findings: Identified an overall Net Promoter Score (NPS) of -18.13 and Average CSAT of 2.97/5.00. Pinpointed Latin America as lowest-performing region (-25.62 NPS) and Product Documentation (13.8%) as top complaint driver."
+      ],
+      technologies: ["Python", "Pandas", "MySQL", "Power BI", "Excel", "Power Query", "Power Automate", "DAX"],
+      image: projectNpsImg,
+      github: "https://github.com/kirankr9343",
+      featured: true
+    },
+    {
+      id: 2,
       title: "Blinkit Sales Dashboard using Power BI",
       subtitle: "Feb 2026",
       technologiesSummary: "Power BI | Excel | SQL | DAX",
@@ -160,7 +179,7 @@ export const portfolioData = {
       featured: true
     },
     {
-      id: 2,
+      id: 3,
       title: "Object Detection System",
       subtitle: "Sep 2025",
       technologiesSummary: "Python | YOLOv8 | OpenCV | TensorFlow | Flask",
@@ -174,10 +193,10 @@ export const portfolioData = {
       technologies: ["Python", "YOLOv8", "OpenCV", "TensorFlow", "Flask"],
       image: projectObjectImg,
       github: "https://github.com/kirankr9343",
-      featured: true
+      featured: false
     },
     {
-      id: 3,
+      id: 4,
       title: "Car Booking Website",
       subtitle: "Apr 2024",
       technologiesSummary: "HTML | CSS | JavaScript | Python | MySQL",
@@ -194,7 +213,7 @@ export const portfolioData = {
       featured: false
     },
     {
-      id: 4,
+      id: 5,
       title: "Animal Intrusion Detection System",
       subtitle: "Feb 2026",
       technologiesSummary: "Python | YOLOv8 | OpenCV | Flask | MySQL",
